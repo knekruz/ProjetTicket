@@ -68,7 +68,7 @@ public class FonctionsMetier implements IMetier
     {
          try {
             Connection cnx = ConnexionBDD.getCnx();
-            PreparedStatement ps = cnx.prepareStatement("insert into tickets values ("+ticket.getIdTicket()+","+ticket.getNomTicket()+",?,?,?)");
+            PreparedStatement ps = cnx.prepareStatement("insert into tickets values (?,?,?,?,?)");
             ps.setInt(1, ticket.getIdTicket() );
             ps.setString(2, ticket.getNomTicket() );
             ps.setString(3, ticket.getDateTicket());
